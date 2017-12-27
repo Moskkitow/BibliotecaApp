@@ -33,6 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :cpf
       t.string :email
+      t.string :name
       t.date :date_born
 
       t.timestamps null: false

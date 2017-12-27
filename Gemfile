@@ -18,7 +18,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -31,6 +30,13 @@ gem 'devise'
 gem 'devise-i18n'
 # Font Awesome
 gem 'font-awesome-rails'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. 
+# It allows you to create pretty URL’s and work with human-friendly strings as if they were numeric ids for ActiveRecord models.
+gem 'friendly_id', '~> 5.1.0'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+# Translations for the kaminari gem
+gem 'kaminari-i18n'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -39,9 +45,14 @@ gem 'font-awesome-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-source 'https://rails-assets.org'
-  #Bootstrap
+source 'https://rails-assets.org' do
+  # Bootstrap v4
   gem 'rails-assets-bootstrap', '~> 4.0.0beta'
+  # Pretty simple jQuery plugin that turns standard Bootstrap alerts into "Growl-like" notifications.
+  gem 'rails-assets-bootstrap-growl'
+  # A cross-browser library of CSS animations. As easy to use as an easy thing
+  gem 'rails-assets-animate-css'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,8 +60,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  # Faker
-  gem 'faker'
 end
 
 group :development do
@@ -60,6 +69,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Faker
+  gem 'faker'
+  # CPF Faker
+  gem 'cpf_faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
